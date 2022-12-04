@@ -7,16 +7,16 @@ import CreateAccountButton from "../CreateAccountButton/CreateAccountButton";
 import LogInButton from "../LogInButton/LogInButton";
 import { IMobileSideMenuProps } from "./MobileSideMenu.types";
 
-const MobileSideMenu = ({ handleMenuClose }: IMobileSideMenuProps) => {
+const MobileSideMenu = ({ options, handleMenuClose }: IMobileSideMenuProps) => {
   const { data: session } = useSession();
   const menuRef = useRef(null);
   useDetectOutsideClick(menuRef, handleMenuClose);
 
   return (
     <div className="absolute top-0 left-0 z-20 h-screen w-screen bg-overlay">
-      <nav
+      <aside
         ref={menuRef}
-        className="flex h-screen max-w-[300px] flex-col bg-white px-2"
+        className="flex h-screen max-w-[300px] flex-col gap-4 bg-white px-2"
       >
         <header className="flex h-14 items-center justify-between pl-2 text-lg font-bold">
           DEV Community 🙍‍♀️🙍‍♂️
@@ -42,7 +42,18 @@ const MobileSideMenu = ({ handleMenuClose }: IMobileSideMenuProps) => {
             </div>
           </div>
         )}
-      </nav>
+        <nav className="flex flex-col">
+          {options.map((option) => (
+            <a
+              href={option.route}
+              key={option.route}
+              className="cursor-pointer rounded-md px-4 py-2 hover:bg-lightBlue hover:text-blue hover:underline"
+            >
+              {option.label}
+            </a>
+          ))}
+        </nav>
+      </aside>
     </div>
   );
 };
