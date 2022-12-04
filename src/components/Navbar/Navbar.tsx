@@ -25,7 +25,7 @@ const Navbar = () => {
   useEffect(() => {}, []);
 
   return (
-    <header className="sticky top-0 z-10 m-auto flex h-14 justify-center pl-4 pr-2 shadow-header">
+    <header className="sticky top-0 z-10 m-auto flex h-14 justify-center bg-white pl-4 pr-2 shadow-header">
       <div className=" flex w-full max-w-7xl items-center justify-between">
         <div className="flex items-center gap-4">
           {isMobile && (
