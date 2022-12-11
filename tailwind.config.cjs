@@ -5,12 +5,14 @@ module.exports = {
     extend: {
       colors: {
         blue: "rgb(59, 73, 223)",
+        lightBlue: "rgba(59, 73, 223, 0.1)",
 
         grey: "rgb(245, 245, 245)",
         greyCard: "rgb(250, 250, 250)",
         borderGrey: "#d6d6d7",
 
-        lightBlue: "rgba(59, 73, 223, 0.1)",
+        heartRed: "#DC2626",
+
         overlay: "rgba(9, 9, 9, 0.5)",
       },
       boxShadow: {

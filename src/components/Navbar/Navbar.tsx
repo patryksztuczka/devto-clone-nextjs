@@ -1,5 +1,6 @@
 import { useSession } from "next-auth/react";
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useState } from "react";
 
 import MenuIcon from "../../assets/icons/MenuIcon/MenuIcon";
 import {
@@ -22,10 +23,8 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
-  useEffect(() => {}, []);
-
   return (
-    <header className="sticky top-0 z-10 m-auto flex h-14 justify-center pl-4 pr-2 shadow-header">
+    <header className="sticky top-0 z-10 m-auto flex h-14 justify-center bg-white pl-4 pr-2 shadow-header">
       <div className=" flex w-full max-w-7xl items-center justify-between">
         <div className="flex items-center gap-4">
           {isMobile && (
@@ -42,13 +41,13 @@ const Navbar = () => {
             />
           )}
           <div>
-            <a href="/">
+            <Link href="/">
               <img
                 className="h-10 w-[50px]"
                 src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
                 alt="logo"
               />
-            </a>
+            </Link>
           </div>
         </div>
         {session && (

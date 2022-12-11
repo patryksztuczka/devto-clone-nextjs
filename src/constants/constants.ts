@@ -33,15 +33,3 @@ export const loggedUserMenuOptions: ISideMenuOption[] = [
     route: "/reading-list",
   },
 ];
-
-export const dummyPosts = [
-  {
-    id: 1,
-    title: "How join works internally in SQL",
-    tags: ["sql", "database"],
-    reactions: 58,
-    comments: 12,
-    timestamp: "03/12/2020",
-    author: "John Doe",
-  },
-];

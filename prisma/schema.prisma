@@ -18,6 +18,37 @@ model Example {
   updatedAt DateTime @updatedAt
 }
 
+model Tag {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String   @db.Text
+  articles    Article[]
+}
+
+model Article {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String
+  content   String   @db.Text
+  published Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  tags      Tag[]
+  comments  Comment[]
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content   String   @db.Text
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  article   Article  @relation(fields: [articleId], references: [id])
+  articleId String
+}
+
 // Necessary for Next auth
 model Account {
   id                String  @id @default(cuid())
@@ -48,11 +79,14 @@ model Session {
 model User {
   id            String    @id @default(cuid())
   name          String?
+  username      String?   @unique
   email         String?   @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
+  articles      Article[]
+  comments      Comment[]
 }
 
 model VerificationToken {
