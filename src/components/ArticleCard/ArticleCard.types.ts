@@ -1,5 +1,5 @@
-import { IArticle } from "../../types/Article";
+import { Article } from "./../../types/Article";
 
 export interface IArticleCardProps {
-  article: IArticle;
+  article: Article;
 }
