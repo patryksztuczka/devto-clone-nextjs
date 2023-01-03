@@ -14,6 +14,14 @@ export const userDropdownOptions: IUserDropdownOptions[] = [
     label: "Create Post",
     route: "/new",
   },
+  {
+    label: "Reading List",
+    route: "/reading-list",
+  },
+  {
+    label: "Settings",
+    route: "/settings",
+  },
 ];
 
 export const unloggedUserMenuOptions: ISideMenuOption[] = [

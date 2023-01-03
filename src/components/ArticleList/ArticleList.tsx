@@ -16,7 +16,6 @@ const ArticleList = () => {
     handleGetArticles();
   }, []);
 
-  console.log(articles);
   return (
     <main className="flex w-screen flex-col gap-4">
       {articles?.map((article: Article) => (
