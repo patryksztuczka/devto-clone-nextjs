@@ -53,7 +53,7 @@ const Navbar = () => {
         {session && (
           <div className="flex items-center gap-4">
             <CreatePostButton />
-            <UserDropdown />
+            <UserDropdown session={session} />
           </div>
         )}
         {!session && (

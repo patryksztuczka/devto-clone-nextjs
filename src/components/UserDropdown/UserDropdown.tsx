@@ -1,12 +1,12 @@
-import { useSession, signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { useState, useRef } from "react";
 
 import { userDropdownOptions } from "../../constants/constants";
 import { useDetectOutsideClick } from "../../hooks/useDetectOutsideClick";
+import { IUserDropdownProps } from "./UserDropdown.types";
 
-const UserDropdown = () => {
-  const { data: session } = useSession();
+const UserDropdown = ({ session }: IUserDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
