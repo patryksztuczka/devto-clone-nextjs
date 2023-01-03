@@ -33,8 +33,7 @@ const MobileSideMenu = ({ options, handleMenuClose }: IMobileSideMenuProps) => {
               DEV Community 👩‍💻👨‍💻 is a community of 966,155 amazing developers
             </h1>
             <p>
-              We're a place where coders share, stay up-to-date and grow their
-              careers.
+              {`We're a place where coders share, stay up-to-date and grow their careers.`}
             </p>
             <div className="flex flex-col items-center">
               <CreateAccountButton />

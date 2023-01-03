@@ -51,7 +51,7 @@ const ProfilePage = ({ user, articles }: any) => {
         </header>
         <div className="flex flex-col">
           {articles.map((article: Article) => (
-            <ArticleCard article={article} />
+            <ArticleCard key={article.id} article={article} />
           ))}
         </div>
       </div>

@@ -25,7 +25,7 @@ const ArticleCard = ({ article }: IArticleCardProps) => {
       <h1 className="text-xl font-bold">{title}</h1>
       <div className="flex gap-2">
         {tags?.map((tag: Tag) => (
-          <span className="text-sm">{`#${tag.name}`}</span>
+          <span key={tag.name} className="text-sm">{`#${tag.name}`}</span>
         ))}
       </div>
       <div className="flex items-center gap-4 text-sm">
