@@ -10,7 +10,9 @@ const articles = async (req: NextApiRequest, res: NextApiResponse) => {
       tags: true,
     },
     where: {
-      authorId: req.query.authorId,
+      authorId: {
+        in: req.query.authorId,
+      },
     },
   });
   res.status(200).json(articles);

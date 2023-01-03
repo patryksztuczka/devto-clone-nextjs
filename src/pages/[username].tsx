@@ -1,3 +1,4 @@
+import { User } from "@prisma/client";
 import React from "react";
 
 import ArticleCard from "../components/ArticleCard/ArticleCard";
@@ -7,18 +8,18 @@ export async function getStaticPaths() {
   const response = await fetch("http://localhost:3000/api/users");
   const users = await response.json();
 
-  const paths = users.map((user: any) => ({
+  const paths = users.map((user: User) => ({
     params: { username: user.username },
   }));
 
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: { params: User }) {
   const response = await fetch(
     `http://localhost:3000/api/user/${params.username}`
   );
-  const user = await response.json();
+  const user: User = await response.json();
   const articles = await fetch(
     `http://localhost:3000/api/articlesByAuthor/${user.id}`
   );
@@ -39,7 +40,7 @@ const ProfilePage = ({ user, articles }: any) => {
         <header className="flex w-screen flex-col bg-white">
           <span className="flex h-14 w-14 items-center justify-center rounded-full bg-black">
             <img
-              src={user?.image}
+              src={user.image}
               alt="user profile photo"
               className="h-[50px] rounded-full"
             />

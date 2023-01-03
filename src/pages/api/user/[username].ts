@@ -5,7 +5,9 @@ import { prisma } from "../../../server/db/client";
 const username = async (req: NextApiRequest, res: NextApiResponse) => {
   const user = await prisma.user.findFirst({
     where: {
-      username: req.query.username as string,
+      username: {
+        in: req.query.username,
+      },
     },
   });
   res.status(200).json(user);

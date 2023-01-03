@@ -19,7 +19,7 @@ const ArticleCard = ({ article }: IArticleCardProps) => {
         </div>
         <div className="flex flex-col">
           <span className="text-sm font-medium">{author.name}</span>
-          <span className="text-xs">{createdAt.toISOString()}</span>
+          <span className="text-xs">{createdAt.toString()}</span>
         </div>
       </div>
       <h1 className="text-xl font-bold">{title}</h1>
