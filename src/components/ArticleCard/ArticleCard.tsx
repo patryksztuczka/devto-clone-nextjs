@@ -11,11 +11,15 @@ const ArticleCard = ({ article }: IArticleCardProps) => {
     <article className="flex max-w-[650px] flex-col gap-4 bg-white px-4 pt-4 pb-3 shadow-card md:rounded-md">
       <div className="flex items-center gap-2">
         <div className="h-10 w-10">
-          <img src={author.image} alt={author.name} className="rounded-full" />
+          <img
+            src={author?.image}
+            alt="profile photo"
+            className="rounded-full"
+          />
         </div>
         <div className="flex flex-col">
           <span className="text-sm font-medium">{author.name}</span>
-          <span className="text-xs">{createdAt}</span>
+          <span className="text-xs">{createdAt.toISOString()}</span>
         </div>
       </div>
       <h1 className="text-xl font-bold">{title}</h1>
