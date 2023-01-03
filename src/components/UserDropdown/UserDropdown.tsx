@@ -42,7 +42,10 @@ const UserDropdown = ({ session }: IUserDropdownProps) => {
           </div>
           <div className="flex w-full flex-col border-b-[1px] border-b-borderGrey py-2">
             {userDropdownOptions.map((option) => (
-              <span className="w-full cursor-pointer rounded-md px-4 py-2 hover:bg-lightBlue hover:text-blue hover:underline">
+              <span
+                key={option.route}
+                className="w-full cursor-pointer rounded-md px-4 py-2 hover:bg-lightBlue hover:text-blue hover:underline"
+              >
                 {option.label}
               </span>
             ))}
